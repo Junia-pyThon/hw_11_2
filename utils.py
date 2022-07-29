@@ -3,19 +3,11 @@ from setings import PATCH_CANDIDATES_JSON
 
 
 def load_candidates_from_json() -> list[dict]:
-    """
-    Загружаем список кандидатов и информацию о них из файла
-    :return:
-    """
     with open(PATCH_CANDIDATES_JSON, encoding='utf-8') as file:
         return json.load(file)
 
 
 def get_candidate(candidate_id: int) ->dict:
-    """
-    На странице /candidates/<pk> выводим информацию о кандидате по его id
-    :return:
-    """
     for candidate in load_candidates_from_json():
         if candidate['id'] == candidate_id:
             return candidate
