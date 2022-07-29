@@ -37,13 +37,7 @@ def get_candidates_by_skill(skill_name: str) -> list[dict]:
     return result
 
 
-@app.route('/')
-def get_all(candidates=load_candidates_from_json()):
-    """
-     На главной странице выводим список всех кандитатов
-    :return:
-    """
-    return render_template('list.html', candidates=candidates)
+
 
 
 
